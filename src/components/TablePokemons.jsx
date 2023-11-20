@@ -1,8 +1,6 @@
 import { Table } from 'antd';
 import { pokemons } from '../data/data';
-
-
-
+import Paragraph from 'antd/es/typography/Paragraph';
 
 export const TablePokemons = () => {
 
@@ -14,8 +12,6 @@ export const TablePokemons = () => {
         }
     })
 
-
-
     const columns = [
         {
             title: "#",
@@ -25,7 +21,9 @@ export const TablePokemons = () => {
         {
             title: "name",
             key: "name",
-            dataIndex: "name"
+            dataIndex: "name",
+            render: (text) => <Paragraph copyable>{text}</Paragraph>,
+
         },
         {
             title: "url",
@@ -35,8 +33,6 @@ export const TablePokemons = () => {
     ]
 
     return (
-        <Table 
-        
-        dataSource={dataSource} columns={columns} />
+        <Table dataSource={dataSource} columns={columns} />
     )
 }
