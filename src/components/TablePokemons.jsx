@@ -24,6 +24,21 @@ export const TablePokemons = () => {
             dataIndex: "name",
             render: (text) => <Paragraph copyable>{text}</Paragraph>,
             sorter: (a, b) => a.name.length - b.name.length,
+            filters: [
+                {
+                    text: "grimer",
+                    value: "grimer"
+                },
+                {
+                    text: "haunter",
+                    value: "haunter"
+                },
+                {
+                    text: "hitmonchan",
+                    value: "hitmonchan"
+                },
+            ],
+            onFilter: (value, item) => item.name.includes(value)
         },
         {
             title: "url",
