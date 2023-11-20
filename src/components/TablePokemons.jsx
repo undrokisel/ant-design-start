@@ -15,15 +15,15 @@ export const TablePokemons = () => {
     const columns = [
         {
             title: "#",
-            key: "numder",
-            dataIndex: "key"
+            key: "number",
+            dataIndex: "key",
         },
         {
             title: "name",
             key: "name",
             dataIndex: "name",
             render: (text) => <Paragraph copyable>{text}</Paragraph>,
-
+            sorter: (a, b) => a.name.length - b.name.length,
         },
         {
             title: "url",
