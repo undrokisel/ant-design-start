@@ -7,7 +7,7 @@ export const TablePokemons = () => {
     const dataSource = pokemons.map((pokemon, index) => {
         return {
             name: pokemon.name,
-            key: index,
+            key: index + 1,
             url: pokemon.url,
         }
     })
@@ -48,6 +48,14 @@ export const TablePokemons = () => {
     ]
 
     return (
-        <Table dataSource={dataSource} columns={columns} />
+        <Table
+            dataSource={dataSource}
+            pagination={{
+                defaultCurrent: '2',
+                responsive: true,
+                pageSize: '5',
+                showQuickJumper: true,
+            }}
+            columns={columns} />
     )
 }
